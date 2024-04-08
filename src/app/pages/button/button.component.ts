@@ -28,30 +28,32 @@ export class ButtonComponent {
       id: 'import',
       label: 'Import',
       component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    }, {
-      id: 'import',
-      label: 'Import',
-      component: BasicDoc
-    },
+    }
+    // , 
+    // {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // }, {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // }, {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // }, {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // }, {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // }, {
+    //   id: 'import',
+    //   label: 'Import',
+    //   component: BasicDoc
+    // },
   ];
 }
