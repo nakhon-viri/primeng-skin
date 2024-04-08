@@ -1,0 +1,33 @@
+@mixin icon($icon) {
+    -webkit-mask: url($icon) center center / contain no-repeat;
+    -webkit-mask-image: url($icon);
+    mask-image: url($icon);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-color: currentColor;
+    color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.bx-chevron-right {
+    @include icon('assets/icons/chevron-right.svg')
+}
+
+.bx-left-arrow-alt {
+    @include icon('assets/icons/left-arrow-alt.svg')
+}
+
+.isax-menu {
+    @include icon('assets/icons/menu.svg')
+}
+
+.bx-eye {
+    @include icon('assets/icons/eye.svg')
+}

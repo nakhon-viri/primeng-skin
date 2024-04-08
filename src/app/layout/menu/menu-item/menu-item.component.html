@@ -1,0 +1,41 @@
+@if (menu.name) {
+  @if (lavel === 1) {
+    <div
+      [ngClass]="[classMenuItem]"
+      [class.menu-link]="menu.routerLink"
+      [routerLink]="menu.routerLink"
+      routerLinkActive="menu-link-active"
+      (click)="onCollapse()"
+      pStyleClass="@next"
+      enterFromClass="hidden"
+      enterActiveClass="slidedown"
+      leaveToClass="hidden"
+      leaveActiveClass="slideup"
+    >
+      <span class="menu-label">{{ menu.name }}</span>
+      <i class="icon bx-chevron-right"></i>
+    </div>
+  } @else {
+    <div
+      [ngClass]="[classMenuItem]"
+      [class.menu-link]="menu.routerLink"
+      [routerLink]="menu.routerLink"
+      routerLinkActive="menu-link-active"
+      (click)="onCollapse()"
+    >
+      <span class="menu-label">{{ menu.name }}</span>
+    </div>
+  }
+}
+@if (menu.children?.length) {
+  <ul class="menu-item-list" [class.menu-list-root]="lavel === 1">
+    @for (subMenu of menu.children; track $index) {
+      <li
+        [class.list-item]="lavel === 1"
+        menuItem
+        [menu]="subMenu"
+        [lavel]="lavel + 1"
+      ></li>
+    }
+  </ul>
+}

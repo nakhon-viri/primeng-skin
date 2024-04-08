@@ -1,0 +1,48 @@
+<div
+  style="
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  "
+>
+  <div #componentHeader class="header-page" style="width: calc(100%)">
+    <div class="btn-back-landing" routerLink="/">
+      <i class="icon bx-left-arrow-alt"></i>
+    </div>
+    <div class="header__content">
+      <div #titleHeaderWrapper class="flex-header" style="margin-bottom: 70px">
+        <h1 #titleHeader id="header-title" style="font-size: 35px">
+          Getting Started
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="doc-component doc-container">
+    @if (docs && apiDocs) {
+      <ul class="doc-tabmenu">
+        <li class="doc-tabmenu-active">
+          <button type="button">FEATURES</button>
+        </li>
+        @if (apiDocs) {
+          <li>
+            <button type="button">API</button>
+          </li>
+        }
+      </ul>
+    }
+    <div class="doc-tabpanels">
+      <div class="doc-tabpanel">
+        <div class="doc-main">
+          <div class="doc-intro">
+            <h1>{{ header }}</h1>
+            <p>{{ description }}</p>
+          </div>
+          <app-docsection [docs]="docs"></app-docsection>
+        </div>
+        <app-docsection-nav [docs]="docs"></app-docsection-nav>
+      </div>
+    </div>
+  </div>
+</div>

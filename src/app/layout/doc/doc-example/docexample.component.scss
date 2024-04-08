@@ -1,0 +1,57 @@
+@keyframes slidedown-code {
+    0% {
+        max-height: 0
+    }
+
+    to {
+        max-height: 1000px
+    }
+}
+
+.card-example {
+    padding: 10px;
+    border-radius: 5px 20px 20px 20px;
+    border-bottom: 0 solid rgba(0, 0, 0, .03);
+    background: var(--s-theme-layout);
+    position: relative;
+    overflow: hidden;
+    transition: all .25s ease;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.05) -4px 9px 25px -6px;
+
+    .codex {
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+
+            li {
+                list-style: none;
+                padding: 3px 10px;
+                display: flex;
+                cursor: pointer;
+                user-select: none;
+
+                i {
+                    width: 16px;
+                    height: 16px;
+                    color: var(--s-theme-color);
+                    opacity: .6;
+                }
+            }
+        }
+
+    }
+
+    .example {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+}

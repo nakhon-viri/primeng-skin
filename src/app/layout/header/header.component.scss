@@ -1,0 +1,58 @@
+@import '../../../styles/base.scss';
+
+.layout-header {
+    height: 56px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    padding: 0 20px;
+
+    .layout-header-content {
+        transition: padding .23s ease;
+
+        @include for-laptop-down {
+            padding-left: 50px;
+        }
+    }
+}
+
+.menu-button {
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    padding: .6rem;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: 0;
+    transition: all .25s ease;
+    color: rgba(#2c3e50, 1) !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+
+
+    &:focus {
+        outline: 0;
+    }
+
+    @include for-laptop-down {
+        display: flex;
+    }
+
+
+}

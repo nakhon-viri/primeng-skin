@@ -1,0 +1,61 @@
+<div class="code-wrapper">
+  <div class="ul-codes">
+    <ul>
+      <li [class.lang-active]="lang === 'html'" (click)="changeLang('html')">
+        <span>HTML</span>
+      </li>
+      <li
+        [class.lang-active]="lang === 'typescript'"
+        (click)="changeLang('typescript')"
+      >
+        <span>TS</span>
+      </li>
+    </ul>
+  </div>
+  @if (code) {
+    <div #docCode class="doc-section-code">
+      @if (lang === "basic") {
+        <pre
+          #preCode
+          class="language-markup"
+        ><code #codeElement>{{code.basic}}</code></pre>
+      }
+
+      @if (lang === "html") {
+        <pre
+          #preCode
+          class="language-markup"
+        ><code #codeElement>{{code.html}}</code></pre>
+      }
+
+      @if (lang === "typescript") {
+        <pre
+          #preCode
+          class="language-typescript"
+        ><code #codeElement>{{code.typescript}}</code></pre>
+      }
+
+      @if (lang === "data") {
+        <pre
+          #preCode
+          class="language-json"
+        ><code #codeElement>{{code.data}}</code></pre>
+      }
+
+      @if (lang === "scss") {
+        <pre
+          #preCode
+          class="language-scss"
+        ><code #codeElement>{{code.scss}}</code></pre>
+      }
+      @if (lang === "command") {
+        <pre
+          #preCode
+          class="language-shell"
+        ><code #codeElement>{{code.command}}</code></pre>
+      }
+    </div>
+  }
+
+  <div class="code-footer"><i class="icon bx-eye"></i></div>
+</div>

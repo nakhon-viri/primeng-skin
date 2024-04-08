@@ -1,0 +1,23 @@
+@import '../../styles/base.scss';
+
+:host ::ng-deep {
+    .menu-mask {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100vw;
+        height: 100vh;
+        visibility: hidden;
+        background: rgba(0, 0, 0, .3);
+        transition: opacity .5s ease;
+
+        @include for-laptop-down {
+            &.open {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

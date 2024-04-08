@@ -1,0 +1,12 @@
+@import '../../../styles/base.scss';
+
+.layout-content {
+    width: var(--s-width-content);
+    margin-left: 260px;
+    padding-top: 56px;
+    transition: all .3s ease;
+
+    @include for-laptop-down {
+        margin-left: 0px;
+    }
+}

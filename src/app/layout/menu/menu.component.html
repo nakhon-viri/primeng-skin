@@ -1,0 +1,13 @@
+<div class="layout-menu" [class.open]="layoutService.isCollapsed">
+  <div
+    [ngClass]="{ 'scroll-fog-top': isFogTop, 'scroll-fog-bottom': isFogBottom }"
+    class="layout-menu-scroller"
+    (scroll)="onScroll($event)"
+  >
+    <ul class="layout-menu-wrapper">
+      @for (menu of menus; track $index) {
+        <li menuItem [menu]="menu" [lavel]="1"></li>
+      }
+    </ul>
+  </div>
+</div>
