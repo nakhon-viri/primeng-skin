@@ -1,5 +1,5 @@
-import { booleanAttribute, ChangeDetectorRef, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { booleanAttribute, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Code, ExtFile, RouteFile } from '../../../interfaces/code';
 
 
@@ -33,13 +33,11 @@ export class AppCodeComponent {
 
   @Input() lang!: string;
 
-  constructor(@Inject(PLATFORM_ID) public platformId: any, @Inject(DOCUMENT) public document: Document, private ref: ChangeDetectorRef,) { }
+  constructor(@Inject(PLATFORM_ID) public platformId: any) { }
 
   ngAfterViewChecked() {
     if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        this.docCode.nativeElement.style.height = `${this.preCode.nativeElement.offsetHeight}px`
-      })
+      this.docCode.nativeElement.style.height = `${this.preCode.nativeElement.offsetHeight}px`
       if ((window as any)['Prism'] && this.codeElement && !this.codeElement.nativeElement.classList.contains('prism')) {
         (window as any)['Prism'].highlightElement(this.codeElement.nativeElement);
         this.codeElement.nativeElement.classList.add('prism');
@@ -56,8 +54,9 @@ export class AppCodeComponent {
   @ViewChild('docCode') docCode: ElementRef;
   changeLang(lang: string) {
     this.lang = lang;
-    this.docCode.nativeElement.style.height = `${this.preCode.nativeElement.offsetHeight}px`
-    this.ref.detectChanges();
+    setTimeout(() => {
+      this.docCode.nativeElement.style.height = `${this.preCode.nativeElement.offsetHeight}px`
+    })
   }
 
   getInitialLang() {
@@ -67,7 +66,7 @@ export class AppCodeComponent {
     return ''
   }
 
-  
+
   async copyCode() {
     // await navigator.clipboard.writeText(this.code[this.lang]);
   }

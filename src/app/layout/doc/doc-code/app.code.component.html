@@ -13,9 +13,10 @@
     </ul>
   </div>
   @if (code) {
-    <div #docCode class="doc-section-code">
+    <div #docCode id="doc-code" class="doc-section-code">
       @if (lang === "basic") {
         <pre
+          id="pre-code"
           #preCode
           class="language-markup"
         ><code #codeElement>{{code.basic}}</code></pre>
@@ -23,6 +24,7 @@
 
       @if (lang === "html") {
         <pre
+          id="pre-code"
           #preCode
           class="language-markup"
         ><code #codeElement>{{code.html}}</code></pre>
@@ -30,6 +32,7 @@
 
       @if (lang === "typescript") {
         <pre
+          id="pre-code"
           #preCode
           class="language-typescript"
         ><code #codeElement>{{code.typescript}}</code></pre>

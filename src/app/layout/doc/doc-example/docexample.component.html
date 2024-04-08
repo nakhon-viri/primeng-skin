@@ -4,12 +4,15 @@
   </div>
   <div class="codex">
     <ul>
-      <li (click)="isOpenCode = !isOpenCode">
+      <li (click)="onCodeCollapse()">
         <i class="icon bx-eye"></i>
       </li>
     </ul>
   </div>
-  @if (isOpenCode) {
+  <div
+    #codeCollopse
+    class="app-code-wrapper"
+  >
     <app-code [code]="code" selector="button-basic-demo"></app-code>
-  }
+  </div>
 </div>

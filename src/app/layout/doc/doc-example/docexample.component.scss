@@ -8,6 +8,16 @@
     }
 }
 
+.app-code-wrapper {
+    transition: all .5s ease;
+    overflow: hidden;
+    max-height: 0px;
+}
+
+.code-collopse {
+    max-height: 1000px;
+}
+
 .card-example {
     padding: 10px;
     border-radius: 5px 20px 20px 20px;
